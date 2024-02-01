@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GTWakala Locator</title>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <!-- Leaflet Routing Machine -->
+  <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+  <style>
+    /* Add your CSS styles here */
+    body {
+      font-family: Montserrat, Frutiger;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #banner img, #sidebar img {
+      width: 100%;
+      height: auto;
+    }
+
+    #banner {
+      width: 100%;
+      height: 30px; /* Adjust the height to your preference */
+      margin-bottom: 20px;
+}
+
+    #sidebar {
+      width: 350px;
+      background-color: #f8f9fa; /* Similar to the chat interface background color */
+      border-left: 1px solid #dee2e6; /* Similar to the chat interface border color */
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Adding a subtle shadow */
+    }
+
+    #sidebar img {
+      margin-bottom: 20px;
+    }
+
+ body, html {
+  height: 100%;
+  margin: 0;
+}
+
+#content-container {
+  display: flex;
+  height: 100vh;
+}
+
+#map-container {
+  flex: 1;
+  height: 100%;
+}
+    
+  #map {
+      height: 100%;
+      width: 100%;
+    }
+
+    #search-container {
+      margin-bottom: 20px;
+    }
+
+ .branch-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-family: 'Frutiger', sans-serif;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+}
+
+.branch-item a {
+  color: #dc4405; /* Adjust the link color to make it visible */
+  text-decoration: underline; /* Underline the link */
+}
+
+    #locationSearch {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    #searchButton, #useLocation {
+      width: 100%;
+      padding: 10px;
+      cursor: pointer;
+      background-color: #D73502;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+#branchList {
+      padding: 10px;
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    /* Custom marker style */
+    .custom-marker {
+      width: 20px;
+      height: 20px;
+      background-color: #D73502; /* Use the custom color for the marker */
+      border-radius: 50%;
+    }
+
+    /* Custom link style */
+    a {
+      color: #dc4405; 
+      text-decoration: none;
+      color: #dc4405; /* Adjust link color */
+    }
+
+    /* Style for the translation widget */
+    .gtranslate_wrapper {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+ 
+  <div id="content-container">
+    <div id="sidebar">
+      <img src="https://i.imgur.com/lP8thmo.png" alt="Sidebar Image">
+      <div id="search-container">
+        <input type="text" id="locationSearch" placeholder="Enter location...">
+        <button id="searchButton" onclick="searchLocation()">Search</button>
+      </div>
+      <button id="useLocation" onclick="useMyLocation()">Use My Location</button>
+      <div id="branchList"></div>
+    </div>
+    <div id="map-container">
+      <div id="map"></div>
+    </div>
+
+  <div class="gtranslate_wrapper"></div>
+  <script>window.gtranslateSettings = {"default_language":"en","languages":["en","sw"],"wrapper_selector":".gtranslate_wrapper","switcher_vertical_position":"top"}</script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+  <script src="script.js"></script>
+
+
+  </div>
+ 
+</body>
+</html>
